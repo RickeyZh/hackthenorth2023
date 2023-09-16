@@ -1,4 +1,7 @@
 body {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,6 +11,12 @@ body {
 }
 
 code {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
