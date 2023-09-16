@@ -1,4 +1,3 @@
-/* 
 import React, { useState } from 'react';
 import ml5 from 'ml5';
 import Sketch from 'react-p5';
@@ -69,7 +68,7 @@ function P5sketch(){
             
             let xDif = Math.abs(pose.keypoints[index1].x - pose.keypoints[index2].x);
             let yDif = Math.abs(pose.keypoints[index1].y - pose.keypoints[index2].y);
-            
+            /*
             if(yDif>xDif){ // probably standing
                 if(sleepPrev==false){
                     prevStateTime %= 100;
@@ -85,7 +84,6 @@ function P5sketch(){
                     isSleeping = false;
                 }
             }
-            /*
             else{   // probably sleeping
                 if(sleepPrev==true){
                     prevStateTime %= 100;
@@ -100,7 +98,7 @@ function P5sketch(){
                 }
                 
             }   
-            
+            */
         }
     }
 
@@ -127,5 +125,3 @@ function P5sketch(){
     );
 }
 export default P5sketch;
-
-*/
