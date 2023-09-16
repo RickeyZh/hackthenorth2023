@@ -68,7 +68,7 @@ function P5sketch(){
             
             let xDif = Math.abs(pose.keypoints[index1].x - pose.keypoints[index2].x);
             let yDif = Math.abs(pose.keypoints[index1].y - pose.keypoints[index2].y);
-            /*
+            
             if(yDif>xDif){ // probably standing
                 if(sleepPrev==false){
                     prevStateTime %= 100;
@@ -85,20 +85,22 @@ function P5sketch(){
                 }
             }
             else{   // probably sleeping
-                if(sleepPrev==true){
+                
+                if(sleepPrev){
                     prevStateTime %= 100;
                     prevStateTime++;
                 } 
+                /*
                 else{
                     sleepPrev = true;
                     prevStateTime = 0;
                 }
                 if(prevStateTime>50){
                     isSleeping = true;
-                }
+                }*/
                 
             }   
-            */
+            
         }
     }
 
