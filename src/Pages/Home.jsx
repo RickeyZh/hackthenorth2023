@@ -12,28 +12,24 @@ let score = 1090;
 // Can print the messages in 
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
-    const menuPopup = () => {
+    const shop = () => {
         setIsOpen(!isOpen);
     };
     return(
         <div>
-            <P5sketch></P5sketch>
+
             <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden ">
-
-
-            <button onClick={menuPopup}>Click me</button>{
+            <button type="button" className="Shop w-[6%] h-[12%] left-[92%] top-[2%] absolute align-middle" on_click={shop}>
+                <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
+                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />     
+            </button>{
                 isOpen && (
                     <div>
                      Hello
                     </div> 
                 )
             }
-            <div className="Shop w-[6%] h-[12%] left-[92%] top-[2%] absolute align-middle">
-                <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
-                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />     
-
-            </div>
-            <div className="relative w-[100%] h-[100%] top-[91%] left-[80%]">
+            <div className="absolute w-[100%] h-[100%] top-[91%] left-[80%]">
                 <img className="absolute w-[51px] h-[47px] top-0 left-0" alt="H" src={heart} />
                 <img className="absolute w-[51px] h-[47px] top-0 left-[63px]" alt="H" src={heart} />
                 <img className="absolute w-[51px] h-[47px] top-0 left-[127px]" alt="H" src={heart} />

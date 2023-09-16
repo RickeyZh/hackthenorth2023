@@ -1,4 +1,4 @@
-/* 
+
 import React, { useState } from 'react';
 import ml5 from 'ml5';
 import Sketch from 'react-p5';
@@ -85,7 +85,7 @@ function P5sketch(){
                     isSleeping = false;
                 }
             }
-            /*
+            
             else{   // probably sleeping
                 if(sleepPrev==true){
                     prevStateTime %= 100;
@@ -128,4 +128,3 @@ function P5sketch(){
 }
 export default P5sketch;
 
-*/
