@@ -4,22 +4,18 @@ import bread from "../Assets/Kawaii Bread.svg";
 import basket from "../Assets/Basket.svg";
 import heart from "../Assets/h-1.svg";
 import font from "../Assets/Alata-Regular.ttf";
-//import P5sketch from "../Components/Sketch";
+import P5sketch from "../Components/Sketch";
+import { useState } from "react";
 
 let score = 1090;
-// Give them messages that they aren't in frame if they are not 
+// Give them messages that they aren't in frame/more than 1 person in frame
+// Can print the messages in 
 export default function Home() {
-
-    function changeShop(){
-        document.getElementById("image").style.display = "hidden";
-    }
-
-
     return(
         <div>
             <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden ">
 
-            <button type="button" className="Shop w-[6%] h-[12%] left-[92%] top-[1%] absolute align-middle" onClick={changeShop}>
+            <div className="Shop w-[6%] h-[12%] left-[92%] top-[2%] absolute align-middle">
                 <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
                 <img className="asdd w-[7vw] h-[8vh] left-0 top-[65%] absolute" src={basket} />     
             </button >
