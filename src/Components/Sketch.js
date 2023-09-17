@@ -128,4 +128,3 @@ function P5sketch(){
 }
 export default P5sketch;
 
-*/
