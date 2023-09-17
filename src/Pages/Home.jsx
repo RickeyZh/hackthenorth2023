@@ -53,7 +53,41 @@ export default function Home() {
         setIsOpenCamera(!isOpenCamera);
     };
 
-
+    const [sleepGoals, setSleepGoals] = useState({
+        sleepStart: "",
+        hoursOfSleep: "",
+        predictedWakeTime: "",
+        });
+        
+        
+        const handleSleepGoalSubmit = (e) => {
+        e.preventDefault();
+        
+        
+        // Calculate predicted wake time
+        const { sleepStart, hoursOfSleep } = sleepGoals;
+        const [startHour, startMinute] = sleepStart.split(":").map(Number);
+        const totalMinutes =
+        startHour * 60 +
+        startMinute +
+        parseInt(hoursOfSleep) * 60;
+        let predictedHour = Math.floor(totalMinutes / 60);
+        const predictedMinute = totalMinutes % 60;
+        // Ensure that predictedHour is less than 24
+        if (predictedHour >= 24) {
+        predictedHour -= 24;
+        }
+        
+        
+        // Format the predicted wake time as HH:MM
+        const predictedWakeTime = `${String(predictedHour).padStart(2, "0")}:${String(
+        predictedMinute
+        ).padStart(2, "0")}`;
+        
+        
+        setSleepGoals({ ...sleepGoals, predictedWakeTime });
+        };
+        
         const petImages = [
             TEST_CAT,
             TEST_CAT2,
@@ -292,19 +326,72 @@ export default function Home() {
                 </div>
                 )}
                 </div>
+                <button
+onClick={toDoPopup}
+className="absolute z-10 w-[6%] h-[12%] left-[92%] top-[30%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center"
+>
+<img
+className="assignment w-[7vw] h-[8vh] left-0 top-[15%] absolute"
+src={assignment}
+alt="Assignment Icon"
+/>
+</button>
+{isOpenS && (
+<div className="help items-center inline-flex bg-white z-0 ">
+<div className="Rectangle1 w-[15vw] h-[40vh] top-[30%] left-[83%] bg-white opacity-30 rounded-[16px] absolute flex items-center justify-center mx-auto">
+<form onSubmit={handleSleepGoalSubmit}>
+<div className="Store opacity-90 top-[5%] left-[5%] items-center justify-center text-black text-2xl font-bold font-Alata absolute text-center">
+sleep goals
+</div>
+<div className="flex flex-col items-center justify-center">
+<label className="bold-text">
+sleep time start:
+<input
+type="text"
+placeholder="00:00"
+value={sleepGoals.sleepStart}
+onChange={(e) =>
+setSleepGoals({
+...sleepGoals,
+sleepStart: e.target.value,
+})
+}
+/>
+</label>
+<label className="bold-text">
+hours of sleep:
+<input
+type="number"
+placeholder="8"
+value={sleepGoals.hoursOfSleep}
+onChange={(e) =>
+setSleepGoals({
+...sleepGoals,
+hoursOfSleep: e.target.value,
+})
+}
+/>
+</label>
+<label className="bold-text">
+predicted wake time:
+<input
+type="text"
+value={sleepGoals.predictedWakeTime}
+readOnly
+/>
+</label>
+<button type="submit" className="bold-text">
+Submit
+</button>
+</div>
+</form>
+</div>
+</div>
+)}
 
-            <button onClick={toDoPopup} className="absolute z-10 w-[6%] h-[12%] left-[92%] top-[30%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
-                <img className="assignment w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={assignment} />  
-            </button> {
-                isOpenS && (
-                    <div className="help items-center inline-flex bg-white z-0 ">
-                        <div className="Rectangle1 w-[15vw] h-[40vh] top-[30%] left-[83%] bg-white opacity-30 rounded-[16px] absolute flex items-center justify-center mx-auto" >
-                        </div>
-                        <div className="Store opacity-80 top-[33%] left-[83.5%] items-center justify-center text-white text-3xl font-normal font-['Alata'] absolute text-center= bold">sleep goals</div>
 
-                    </div>
-                    )
-            }
+
+
 
 
 
