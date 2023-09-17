@@ -192,8 +192,8 @@ export default function Home() {
       // Update the image source and quote index
       setImageIndex((prevIndex) => (prevIndex + 1) % code.length);
       setQuoteIndex((prevIndex) => (prevIndex + 1) % mainQuotes.length);
+      score ++;
     }, 1000); // Change image every 2 seconds (2000 milliseconds)
-
     return () => clearInterval(imageInterval); // Cleanup on unmount
   }, []);  
 
