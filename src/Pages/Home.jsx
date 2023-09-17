@@ -1,4 +1,3 @@
-import Shop from "./Shop";
 import { Link } from "react-router-dom";
 import bread from "../Assets/Kawaii Bread.svg";
 import basket from "../Assets/Basket.svg";
@@ -13,6 +12,9 @@ import TEST_CAT4 from "../Assets/Skin4.png";
 
 import TEST_CAT5 from "../Assets/duck3.png";
 import TEST_CATT5 from "../Assets/duck4.png";
+
+import TEST_CAT6 from "../Assets/duck5.png";
+import TEST_CATT6 from "../Assets/duck6.png";
 
 import TEST_ITEM from "../Assets/ToyMouse.webp";
 import TEST_ITEM2 from "../Assets/DuckysDream.webp";
@@ -30,12 +32,14 @@ import logo from '../logo.svg';
 import '../App.css';
 import React from 'react';
 import QuoteGenerator from '../Components/QuoteGenerator';
+import { useSleepState } from '../Components/SleepState';
 
 let character = 0;
 export let score = 1000;
 // Give them messages that they aren't in frame/more than 1 person in frame
 // Can print the messages in
 export default function Home() {
+    const { isSleeping } = useSleepState;
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenS, setIsOpenS] = useState(false);
     const [isOpenCamera, setIsOpenCamera] = useState(false);
@@ -96,7 +100,8 @@ export default function Home() {
             TEST_CAT2,
             TEST_CAT3,
             TEST_CAT4,
-            TEST_CAT5
+            TEST_CAT5,
+            TEST_CAT6
         ];
 
           const [hoveredButton, setHoveredButton] = useState(null);
@@ -232,7 +237,13 @@ export default function Home() {
       // Update the image source and quote index
       setImageIndex((prevIndex) => (prevIndex + 1) % code.length);
       setQuoteIndex((prevIndex) => (prevIndex + 1) % mainQuotes.length);
-      score ++;
+      if(isSleeping==1){
+        score++
+      }
+      else{
+        score--
+        score = Math.max(0, score)
+      }
     }, 1000); // Change image every 2 seconds (2000 milliseconds)
     return () => clearInterval(imageInterval); // Cleanup on unmount
   }, []);  
@@ -287,6 +298,13 @@ export default function Home() {
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT5}
+      alt="Basket"
+    />
+  </button>
+  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(5)}>
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT6}
       alt="Basket"
     />
   </button>
@@ -435,7 +453,10 @@ Submit
                     <div className="Rectangle2 w-[15vw] h-[9vh] left-0 top-0 absolute bg-zinc-300 bg-opacity-0 rounded-[32px] border-4 border-white border-opacity-50" /></div>
                 </div>
             </div>
+            
+
         </div>
+        
     )
    
 }
