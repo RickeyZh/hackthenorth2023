@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hackthenorth2023/static/css/main.57cf4f29.css",
-    "main.js": "/hackthenorth2023/static/js/main.7ab7912f.js",
+    "main.js": "/hackthenorth2023/static/js/main.5a69b047.js",
     "static/js/787.ca294a0c.chunk.js": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js",
     "static/media/Skin4.png": "/hackthenorth2023/static/media/Skin4.92574b4ab1abc6464189.png",
     "static/media/duck1.png": "/hackthenorth2023/static/media/duck1.bdfb187cb93d9b4a007f.png",
@@ -26,11 +26,11 @@
     "index.html": "/hackthenorth2023/index.html",
     "static/media/Camera alt.svg": "/hackthenorth2023/static/media/Camera alt.f213aba8041a5042f848c9ddad328574.svg",
     "main.57cf4f29.css.map": "/hackthenorth2023/static/css/main.57cf4f29.css.map",
-    "main.7ab7912f.js.map": "/hackthenorth2023/static/js/main.7ab7912f.js.map",
+    "main.5a69b047.js.map": "/hackthenorth2023/static/js/main.5a69b047.js.map",
     "787.ca294a0c.chunk.js.map": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57cf4f29.css",
-    "static/js/main.7ab7912f.js"
+    "static/js/main.5a69b047.js"
   ]
 }
