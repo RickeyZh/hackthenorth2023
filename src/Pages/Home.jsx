@@ -35,13 +35,12 @@ export default function Home() {
         
     return(
         <div>
-            <P5sketch></P5sketch>
-            <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden " style={{backgroundColor,transition: 'background-color 2s ease'}}>
 
-            <button onClick={menuPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[2%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
+            <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden ">
+            <button type="button" className="Shop w-[6%] h-[12%] left-[92%] top-[2%] absolute align-middle" on_click={shop}>
                 <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
-                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />   
-            </button> {
+                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />     
+            </button>{
                 isOpen && (
                     <div className="help items-center inline-flex bg-white z-10 ">
 

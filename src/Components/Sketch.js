@@ -6,15 +6,15 @@ import p5 from 'p5';
 let video;
 let poseNet;
 let poses = [];
-let sleepPrev = false;
+let sleepPrev = 0;
 let prevStateTime = 0;
 function P5sketch(){
     const [isSleeping, setIsSleeping] = useState(0);
     function setup(p5, CanvasParentRef) {
         
-        p5.createCanvas(200, 200).parent(CanvasParentRef);
+        p5.createCanvas(640, 480).parent(CanvasParentRef);
         video = p5.createCapture(p5.VIDEO);
-        video.size(200, 200);
+        video.size(640, 480);
 
         // Create a new poseNet method with a single detection
         poseNet = ml5.poseNet(video, modelReady);
@@ -22,18 +22,18 @@ function P5sketch(){
         // with an array every time new poses are detected
         poseNet.on("pose", function(results) {
             poses = results;
-            console.log(poses);
+            //console.log(poses);
         });
         // Hide the video element, and just show the canvas
         video.hide();
     }
 
         function modelReady() {
-            console.log("Model Ready");
+            //console.log("Model Ready");
         }
 
         function draw(p5) {
-            p5.image(video, 0, 0, 200, 200);
+            p5.image(video, 0, 0, 640, 480); // top left corner + bottom right corner
 
             // We can call both functions to draw all keypoints and the skeletons
             drawKeypoints(p5);
@@ -52,54 +52,66 @@ function P5sketch(){
                 // Only draw an ellipse is the pose probability is bigger than 0.2
                 if (keypoint.score > 0.2) {
                     p5.noStroke();
-                    p5.ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+                    p5.ellipse(keypoint.position.x, keypoint.position.y, 5, 5);
                 }
             }
-
             // Code to see if lying down
-            let index1 = 11; // hip coord
-            if(pose.keypoints[11].score<pose.keypoints[12].score){
-                index1 = 12;
+
+            if(pose.leftHip.score <= 0.2 && pose.rightHip.score<=0.2) continue;
+            if(pose.leftHip.score <= 0.2 && pose.rightHip.score<=0.2) continue;
+
+            let xDif = pose.leftShoulder.x; // hip coord
+            let yDif = pose.leftShoulder.y;
+            if(pose.leftShoulder.score<pose.rightShoulder.score){
+                xDif = pose.rightShoulder.x;
+                yDif = pose.rightShoulder.y;
             }
-            let index2 = 5;   // shoulder coord
-            if(pose.keypoints[5].score<pose.keypoints[6]){
-                index2 = 6;
+
+            
+            if(pose.leftHip.score<pose.rightHip.score){
+                xDif = Math.abs(xDif-pose.rightHip.x);
+                yDif = Math.abs(yDif-pose.rightHip.y);
             }
-            
-            let xDif = Math.abs(pose.keypoints[index1].x - pose.keypoints[index2].x);
-            let yDif = Math.abs(pose.keypoints[index1].y - pose.keypoints[index2].y);
-            
-            if(yDif>xDif){ // probably standing
-                if(sleepPrev==false){
+            else{
+                xDif = Math.abs(xDif-pose.leftHip.x);
+                yDif = Math.abs(yDif-pose.leftHip.y);
+            }
+
+            //console.log(xDif);
+            //console.log(yDif);
+
+
+            if(yDif>xDif+50){ // probably standing
+                if(sleepPrev==0){
                     prevStateTime %= 100;
                     prevStateTime++;
 
                 } 
                 else{
-                    sleepPrev = false;
+                    sleepPrev = 0;
                     prevStateTime = 0;
                 }
 
-                if(prevStateTime>50){
-                    isSleeping = false;
+                if(prevStateTime>25){
+                    setIsSleeping(0);
                 }
             }
             else{   // probably sleeping
                 
-                if(sleepPrev){
+                if(sleepPrev==1){
                     prevStateTime %= 100;
                     prevStateTime++;
                 } 
-                /*
+                
                 else{
-                    sleepPrev = true;
+                    sleepPrev = 1;
                     prevStateTime = 0;
                 }
-                if(prevStateTime>50){
-                    isSleeping = true;
-                }*/
+                if(prevStateTime>25){
+                    setIsSleeping(1);
+                }
                 
-            }   
+            } 
             
         }
     }
@@ -127,4 +139,3 @@ function P5sketch(){
     );
 }
 export default P5sketch;
-
