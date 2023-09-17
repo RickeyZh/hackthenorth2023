@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/hackthenorth2023/static/css/main.e8ef8061.css",
+    "main.js": "/hackthenorth2023/static/js/main.a25394ea.js",
+    "static/js/787.ca294a0c.chunk.js": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js",
+    "static/media/Alata-Regular.ttf": "/hackthenorth2023/static/media/Alata-Regular.a90e0970a7aca7d36f95.ttf",
+    "static/media/Skin1.png": "/hackthenorth2023/static/media/Skin1.33037b146de872e909e5.png",
+    "static/media/Kawaii Bread.svg": "/hackthenorth2023/static/media/Kawaii Bread.9d6d44aa1f5ec618f0940e89a19dcbbf.svg",
+    "static/media/h-1.svg": "/hackthenorth2023/static/media/h-1.e330528908d47566c008b3b998f2d0ca.svg",
+    "static/media/Basket.svg": "/hackthenorth2023/static/media/Basket.882e6f09b84e9dae626d82c39071074f.svg",
+    "index.html": "/hackthenorth2023/index.html",
+    "main.e8ef8061.css.map": "/hackthenorth2023/static/css/main.e8ef8061.css.map",
+    "main.a25394ea.js.map": "/hackthenorth2023/static/js/main.a25394ea.js.map",
+    "787.ca294a0c.chunk.js.map": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8ef8061.css",
+    "static/js/main.a25394ea.js"
+  ]
+}
