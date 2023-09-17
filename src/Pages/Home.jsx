@@ -32,52 +32,72 @@ export default function Home() {
         
         return () => clearInterval(interval); // Cleanup on unmount
         }, []);
-        
+
+
+        const [hoveredButton, setHoveredButton] = useState(null);
+          const buttons = Array.from({ length: 4 }, (_, index) => (
+            <button
+              key={index}
+              className="relative flex items-center justify-center p-2 border border-gray-300"
+              onMouseEnter={() => setHoveredButton(index)}
+              onMouseLeave={() => setHoveredButton(null)}
+            >
+              <img
+                className={`asdd col-span-1 transition-transform transform ${
+                  hoveredButton === index ? 'animate-bounce' : ''
+                }`}
+                src={basket}
+                alt="Basket"
+              />
+            </button>
+          ));
+
+        const [hoveredButton1, setHoveredButton1] = useState(null);
+          const buttons1 = Array.from({ length: 4 }, (_, index) => (
+            <button
+              key={index}
+              className="relative flex items-center justify-center p-2 border border-gray-300"
+              onMouseEnter={() => setHoveredButton1(index)}
+              onMouseLeave={() => setHoveredButton1(null)}
+            >
+              <img
+                className={`asdd col-span-1 transition-transform transform ${
+                  hoveredButton1 === index ? 'animate-bounce' : ''
+                }`}
+                src={basket}
+                alt="Basket"
+              />
+            </button>
+          ));
+
+    
     return(
         <div>
+            <P5sketch></P5sketch>
+            <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden " style={{backgroundColor,transition: 'background-color 2s ease'}}>
 
-            <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden ">
-            <button type="button" className="Shop w-[6%] h-[12%] left-[92%] top-[2%] absolute align-middle" on_click={shop}>
+            <button onClick={menuPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[2%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
                 <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
-                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />     
-            </button>{
+                <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />   
+
+                
+            </button> {
                 isOpen && (
                     <div className="help items-center inline-flex bg-white z-10 ">
 
                         <div className="Rectangle1 w-[60vw] h-[60vh] top-[20%] left-[19%] bg-white rounded-[16px] absolute flex items-center justify-center mx-auto" >
-                            <div className="Store top-[2%] items-center justify-center text-slate-400 text-6xl font-normal font-['Alata'] absolute text-center=">Breadshop</div>
+                            <div className="Store top-[2%] items-center justify-center text-slate-400 text-6xl font-normal font-['Alata'] absolute text-center= bold">BREADSHOP</div>
                             
-                            <div className="Store top-[20%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">PETS!</div>
+                            <div className="Store top-[20%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">pets!</div>
                             <div className="absolute top-[30%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
-                                <div className="flex items-center justify-center p-2 border border-gray-300">
-                                    <img className="asdd col-span-1" src={basket} alt="Basket" />  
-                                </div>
-                                <div className="flex items-center justify-center p-2 border border-gray-300">
-                                    <img className="asdd col-span-1" src={basket} alt="Basket" />   
-                                </div>
-                                <div className="flex items-center justify-center p-2 border border-gray-300">
-                                    <img className="asdd col-span-1" src={basket} alt="Basket" />   
-                                </div>
-                                <div className="flex items-center justify-center p-2 border border-gray-300">
-                                    <img className="asdd col-span-1" src={basket} alt="Basket" />   
-                                </div>
+                                {buttons}
                             </div>
 
-                            <div className="Store top-[60%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">PETS!</div>
+                            <div className="Store top-[60%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">items!</div>
+                            
                             <div className="absolute top-[70%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
-  <button className="flex items-center justify-center p-2 border border-gray-300">
-    <img className="asdd col-span-1" src={basket} alt="Basket" />
-  </button>
-  <button className="flex items-center justify-center p-2 border border-gray-300">
-    <img className="asdd col-span-1" src={basket} alt="Basket" />
-  </button>
-  <button className="flex items-center justify-center p-2 border border-gray-300">
-    <img className="asdd col-span-1" src={basket} alt="Basket" />
-  </button>
-  <button className="flex items-center justify-center p-2 border border-gray-300">
-    <img className="asdd col-span-1" src={basket} alt="Basket" />
-  </button>
-</div>
+                                {buttons1}
+                            </div>
                         </div>
 
 
@@ -85,8 +105,12 @@ export default function Home() {
                 )
             } 
 
+
+
             <div class="h-screen flex items-center justify-center mx-auto">
                 <img className="Bird absolute justify-center items-center h-[30vh] " src={TEST_CAT} alt="oks" />
+                <div className="Store top-[70%] items-center justify-center text-white text-6xl font-normal font-['Alata'] absolute text-center= bold">dont let yesterday take up too much of today!</div>
+
             </div>
 
 
