@@ -1,6 +1,7 @@
 {
   "name": "hackthenorth2023",
   "version": "0.1.0",
+  "homepage": "https://rickeyzh.github.io/hackthenorth2023",
   "private": true,
   "dependencies": {
     "@tensorflow-models/posenet": "^1.0.3",
