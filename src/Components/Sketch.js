@@ -135,7 +135,7 @@ function P5sketch(){
         <div>
             <Sketch setup={setup} draw={draw} />
             <div style={{ fontFamily: 'Alata', fontSize: '24px' }}></div>
-Are you sleeping? {isSleeping === 1 ? 'Yes' : 'No'}
+            {isSleeping === 1 ? 'you are currently not sleeping! go to sleep!' : 'good job, you are sleeping'}
 
         </div>
     );

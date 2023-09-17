@@ -11,6 +11,9 @@ import TEST_CATT2 from "../Assets/penguin2.png";
 import TEST_CAT3 from "../Assets/Skin3.png";
 import TEST_CAT4 from "../Assets/Skin4.png";
 
+import TEST_CAT5 from "../Assets/duck3.png";
+import TEST_CATT5 from "../Assets/duck4.png";
+
 import TEST_ITEM from "../Assets/ToyMouse.webp";
 import TEST_ITEM2 from "../Assets/DuckysDream.webp";
 import TEST_ITEM3 from "../Assets/MomomiyaIchigo.webp";
@@ -87,12 +90,13 @@ export default function Home() {
         
         setSleepGoals({ ...sleepGoals, predictedWakeTime });
         };
-        
+        const [petIndex, setPetIndex] = useState(0);
         const petImages = [
             TEST_CAT,
             TEST_CAT2,
             TEST_CAT3,
-            TEST_CAT4
+            TEST_CAT4,
+            TEST_CAT5
         ];
 
           const [hoveredButton, setHoveredButton] = useState(null);
@@ -112,7 +116,7 @@ export default function Home() {
               />
             </button>
           ));
-
+        const [itemIndex, setItemIndex] = useState(0);
         const itemImages = [
             TEST_ITEM,
             TEST_ITEM2,
@@ -214,8 +218,8 @@ export default function Home() {
             const [imageIndex, setImageIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
 
-
   const images = [TEST_CAT, TEST_CATT]; // Add your image sources here
+
   useEffect(() => {
     let code = images;
 
@@ -251,31 +255,38 @@ export default function Home() {
                            
                             <div className="Store top-[15%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">pets!</div>
 <div className="absolute top-[23%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
-  <button className="flex items-center justify-center p-2">
+  <button className="flex items-center justify-center p-2" onClick={() => setPetIndex(0)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2 ">
+  <button className="flex items-center justify-center p-2 "  onClick={() => setPetIndex(1)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT2}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2 ">
+  <button className="flex items-center justify-center p-2 "  onClick={() => setPetIndex(2)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT3}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2">
+  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(3)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT4}
+      alt="Basket"
+    />
+  </button>
+  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(4)}>
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT5}
       alt="Basket"
     />
   </button>
