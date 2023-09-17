@@ -5,7 +5,9 @@ import basket from "../Assets/Basket.svg";
 import TEST_CAT from "../Assets/duck1.png";
 import TEST_CATT from "../Assets/duck2.png";
 
-import TEST_CAT2 from "../Assets/Skin2.png";
+import TEST_CAT2 from "../Assets/penguin1.png";
+import TEST_CATT2 from "../Assets/penguin2.png";
+
 import TEST_CAT3 from "../Assets/Skin3.png";
 import TEST_CAT4 from "../Assets/Skin4.png";
 
@@ -56,14 +58,14 @@ export default function Home() {
             TEST_CAT,
             TEST_CAT2,
             TEST_CAT3,
-            TEST_CAT4,
+            TEST_CAT4
         ];
 
           const [hoveredButton, setHoveredButton] = useState(null);
           const buttons = petImages.map((imageSource, index) => (
             <button
               key={index}
-              className="relative flex items-center justify-center p-2 border border-gray-300"
+              className="relative flex items-center justify-center p-2 "
               onMouseEnter={() => setHoveredButton(index)}
               onMouseLeave={() => setHoveredButton(null)}
             >
@@ -88,7 +90,7 @@ export default function Home() {
           const buttons1 = itemImages.map((imageSource, index) => (
             <button
               key={index}
-              className="relative flex items-center justify-center p-2 border border-gray-300"
+              className="relative flex items-center justify-center p-2 "
               onMouseEnter={() => setHoveredButton1(index)}
               onMouseLeave={() => setHoveredButton1(null)}
             >
@@ -213,10 +215,37 @@ export default function Home() {
                         <div className="Rectangle1 w-[60vw] h-[60vh] top-[20%] left-[19%] bg-white rounded-[16px] absolute flex items-center justify-center mx-auto" >
                             <div className="Store top-[2%] items-center justify-center text-slate-400 text-6xl font-normal font-['Alata'] absolute text-center= bold">BREADSHOP</div>
                            
-                            <div className="Store top-[20%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">pets!</div>
-                            <div className="absolute top-[30%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
-                                {buttons}
-                            </div>
+                            <div className="Store top-[15%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">pets!</div>
+<div className="absolute top-[23%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
+  <button className="flex items-center justify-center p-2">
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT}
+      alt="Basket"
+    />
+  </button>
+  <button className="flex items-center justify-center p-2 ">
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT2}
+      alt="Basket"
+    />
+  </button>
+  <button className="flex items-center justify-center p-2 ">
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT3}
+      alt="Basket"
+    />
+  </button>
+  <button className="flex items-center justify-center p-2">
+    <img
+      className="asdd col-span-1 transition-transform transform hover:scale-110"
+      src={TEST_CAT4}
+      alt="Basket"
+    />
+  </button>
+</div>
 
 
                             <div className="Store top-[60%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">items!</div>
