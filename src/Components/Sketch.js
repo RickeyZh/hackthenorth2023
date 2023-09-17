@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ml5 from 'ml5';
 import Sketch from 'react-p5';
 import { GetVal } from '../Pages/Home';
-import { useSleepState } from './SleepState';
+import useSleepState from './SleepState';
 import p5 from 'p5';
 
 let video;
@@ -12,7 +12,6 @@ let sleepPrev = 0;
 let prevStateTime = 0;
 function P5sketch(){
     const { isSleeping, setIsSleeping } = useSleepState(); // Use the custom hook to manage state
-
     function setup(p5, CanvasParentRef) {
 
         p5.createCanvas(640, 480).parent(CanvasParentRef);
@@ -135,6 +134,7 @@ function P5sketch(){
         }
     }
     return(
+
         <div>
             <Sketch setup={setup} draw={draw} />
             <div style={{ fontFamily: 'Alata', fontSize: '24px' }}></div>

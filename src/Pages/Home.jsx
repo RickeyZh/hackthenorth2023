@@ -32,14 +32,14 @@ import logo from '../logo.svg';
 import '../App.css';
 import React from 'react';
 import QuoteGenerator from '../Components/QuoteGenerator';
-import { useSleepState } from '../Components/SleepState';
+import useSleepState from '../Components/SleepState';
 
 let character = 0;
 export let score = 1000;
 // Give them messages that they aren't in frame/more than 1 person in frame
 // Can print the messages in
 export default function Home() {
-    const { isSleeping } = useSleepState;
+    const { isSleeping } = useSleepState();
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenS, setIsOpenS] = useState(false);
     const [isOpenCamera, setIsOpenCamera] = useState(false);
@@ -224,12 +224,16 @@ export default function Home() {
   const [quoteIndex, setQuoteIndex] = useState(0);
 
   const images = [TEST_CAT, TEST_CATT]; // Add your image sources here
-
+  const images2 = [TEST_CAT2, TEST_CATT2];
+  const images3 = [TEST_CAT5, TEST_CATT5];
+  const images4 = [TEST_CATT6, TEST_CATT6];
+  const [curImage, setCurImage] = useState(images);
   useEffect(() => {
-    let code = images;
+
+    let code = curImage;
 
     if(character==0){
-        code = images;
+        code = curImage;
     }
 
 
@@ -266,28 +270,28 @@ export default function Home() {
                            
                             <div className="Store top-[15%] items-center justify-center text-slate-400 text-3xl font-normal font-['Alata'] absolute text-center=">pets!</div>
 <div className="absolute top-[23%] justify-center items-center grid grid-cols-4 gap-5 row-start-2">
-  <button className="flex items-center justify-center p-2" onClick={() => setPetIndex(0)}>
+  <button className="flex items-center justify-center p-2" onClick={() => setCurImage(images)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2 "  onClick={() => setPetIndex(1)}>
+  <button className="flex items-center justify-center p-2 "  onClick={() => setCurImage(images2)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT2}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(2)}>
+  <button className="flex items-center justify-center p-2"  onClick={() => setCurImage(images3)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT5}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(3)}>
+  <button className="flex items-center justify-center p-2"  onClick={() => setCurImage(images4)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT6}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function useSleepState() {
+export default function useSleepState() {
   const [isSleeping, setIsSleeping] = useState(0);
 
   return { isSleeping, setIsSleeping };
