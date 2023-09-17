@@ -3,6 +3,7 @@ import ml5 from 'ml5';
 import Sketch from 'react-p5';
 import { GetVal } from '../Pages/Home';
 import p5 from 'p5';
+import useSleepState from '../Components/SleepState';
 
 let video;
 let poseNet;
@@ -10,7 +11,7 @@ let poses = [];
 let sleepPrev = 0;
 let prevStateTime = 0;
 function P5sketch(){
-    const [ isSleeping, setIsSleeping ] = useState(0); // Use the custom hook to manage state
+    const { isSleeping, setIsSleeping } = useSleepState(); // Use the custom hook to manage state
     function setup(p5, CanvasParentRef) {
 
         p5.createCanvas(640, 480).parent(CanvasParentRef);
@@ -137,7 +138,7 @@ function P5sketch(){
         <div>
             <Sketch setup={setup} draw={draw} />
             <div style={{ fontFamily: 'Alata', fontSize: '24px' }}></div>
-            {isSleeping === 1 ? 'you are currently not sleeping! go to sleep!' : 'good job, you are sleeping'}
+            {isSleeping === 1 ? 'good job, you are sleeping' : 'you are currently not sleeping! go to sleep!'}
 
         </div>
     );

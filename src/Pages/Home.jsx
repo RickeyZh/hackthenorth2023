@@ -32,14 +32,13 @@ import logo from '../logo.svg';
 import '../App.css';
 import React from 'react';
 import QuoteGenerator from '../Components/QuoteGenerator';
-import useSleepState from '../Components/SleepState';
 
 let character = 0;
 export let score = 1000;
 // Give them messages that they aren't in frame/more than 1 person in frame
 // Can print the messages in
 export default function Home() {
-    const { isSleeping } = useSleepState();
+    const { isSleeping } = useState(1);
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenS, setIsOpenS] = useState(false);
     const [isOpenCamera, setIsOpenCamera] = useState(false);
