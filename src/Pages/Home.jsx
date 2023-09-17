@@ -280,28 +280,14 @@ export default function Home() {
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2 "  onClick={() => setPetIndex(2)}>
-    <img
-      className="asdd col-span-1 transition-transform transform hover:scale-110"
-      src={TEST_CAT3}
-      alt="Basket"
-    />
-  </button>
-  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(3)}>
-    <img
-      className="asdd col-span-1 transition-transform transform hover:scale-110"
-      src={TEST_CAT4}
-      alt="Basket"
-    />
-  </button>
-  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(4)}>
+  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(2)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT5}
       alt="Basket"
     />
   </button>
-  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(5)}>
+  <button className="flex items-center justify-center p-2"  onClick={() => setPetIndex(3)}>
     <img
       className="asdd col-span-1 transition-transform transform hover:scale-110"
       src={TEST_CAT6}
