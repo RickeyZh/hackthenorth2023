@@ -93,6 +93,7 @@ function P5sketch(){
                 }
 
                 if(prevStateTime>25){
+                    
                     setIsSleeping(0);
                 }
             }

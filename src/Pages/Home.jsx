@@ -2,7 +2,9 @@ import Shop from "./Shop";
 import { Link } from "react-router-dom";
 import bread from "../Assets/Kawaii Bread.svg";
 import basket from "../Assets/Basket.svg";
-import TEST_CAT from "../Assets/Skin1.png";
+import TEST_CAT from "../Assets/duck1.png";
+import TEST_CATT from "../Assets/duck2.png";
+
 import TEST_CAT2 from "../Assets/Skin2.png";
 import TEST_CAT3 from "../Assets/Skin3.png";
 import TEST_CAT4 from "../Assets/Skin4.png";
@@ -24,7 +26,8 @@ import '../App.css';
 import React from 'react';
 import QuoteGenerator from '../Components/QuoteGenerator';
 
-let score = 1090;
+let character = 0;
+export let score = 1000;
 // Give them messages that they aren't in frame/more than 1 person in frame
 // Can print the messages in
 export default function Home() {
@@ -172,7 +175,27 @@ export default function Home() {
             };
             }, []);
             
-            
+            const [imageIndex, setImageIndex] = useState(0);
+  const [quoteIndex, setQuoteIndex] = useState(0);
+
+
+  const images = [TEST_CAT, TEST_CATT]; // Add your image sources here
+  useEffect(() => {
+    let code = images;
+
+    if(character==0){
+        code = images;
+    }
+
+
+    const imageInterval = setInterval(() => {
+      // Update the image source and quote index
+      setImageIndex((prevIndex) => (prevIndex + 1) % code.length);
+      setQuoteIndex((prevIndex) => (prevIndex + 1) % mainQuotes.length);
+    }, 1000); // Change image every 2 seconds (2000 milliseconds)
+
+    return () => clearInterval(imageInterval); // Cleanup on unmount
+  }, []);  
 
     return(
         <div>
@@ -257,8 +280,11 @@ export default function Home() {
 
 
             <div className="h-screen flex items-center justify-center mx-auto">
-                <img className="Bird absolute justify-center items-center h-[30vh] " src={TEST_CAT} alt="oks" />
-                <div className="Store top-[70%] items-center justify-center text-white text-4xl font-normal font-['Alata'] absolute text-center bold">
+            <img
+        className="Bird absolute justify-center items-center h-[30vh]"
+        src={images[imageIndex]}
+        alt="Image"
+      />                <div className="Store top-[70%] items-center justify-center text-white text-4xl font-normal font-['Alata'] absolute text-center bold">
                 {mainQuotes[mainQuoteIndex]}
                 </div>                
             </div>
