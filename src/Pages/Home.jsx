@@ -8,6 +8,7 @@ import font from "../Assets/Alata-Regular.ttf";
 import P5sketch from "../Components/Sketch";
 import { useState ,useEffect} from "react";
 import assignment from "../Assets/Assignment.svg";
+import camera from "../Assets/Camera alt.svg";
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -20,6 +21,7 @@ let score = 1090;
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenS, setIsOpenS] = useState(false);
+    const [isOpenCamera, setIsOpenCamera] = useState(false);
 
     const [backgroundColor, setBackgroundColor] = useState('#849ED1');
 
@@ -31,6 +33,11 @@ export default function Home() {
     const toDoPopup = () => {
         setIsOpenS(!isOpenS);
     };
+
+    const cameraPopUp = () => {
+        setIsOpenCamera(!isOpenCamera);
+    };
+
 
 
         const [hoveredButton, setHoveredButton] = useState(null);
@@ -162,10 +169,22 @@ export default function Home() {
             }
 
 
+            <button onClick={cameraPopUp} className="absolute w-[6%] h-[12%] left-[92%] top-[16%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
+                <img className="assignment w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={camera} />  
+            </button> {
+                isOpenCamera && (
+                    <div className="help items-center inline-flex bg-white z-10 ">
+                        <div className="Rectangle1 w-[60vw] h-[60vh] top-[20%] left-[19%] bg-white rounded-[16px] absolute flex items-center justify-center mx-auto" >
 
-            <button onClick={toDoPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[16%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
+                        </div>
+                    </div>
+                    )
+            }
+
+            <button onClick={toDoPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[30%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
                 <img className="assignment w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={assignment} />  
             </button> 
+
 
 
             <div className="h-screen flex items-center justify-center mx-auto">
