@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# EarlyGoose - Your Sleep Pattern Companion
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to EarlyGoose, your go-to solution for fixing your sleep pattern and making the most out of your restful nights. EarlyGoose combines cutting-edge technology, gamification, and goal-setting to help you achieve better sleep habits and overall well-being.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [How It Works](#how-it-works)
+  - [Posenet Sleep Detection](#posenet-sleep-detection)
+  - [Gamification](#gamification)
+  - [Goal Setting](#goal-setting)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run EarlyGoose, you'll need the following software installed on your machine:
 
-### `npm test`
+- Node.js: Download and install it from [nodejs.org](https://nodejs.org/).
+- npm: It comes bundled with Node.js.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone this repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git clone https://github.com/yourusername/earlygoose.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Copy code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate to the project folder:
 
-### `npm run eject`
+cd earlygoose
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Copy code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install the project dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Copy code
 
-## Learn More
+4. Start the EarlyGoose app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copy code
 
-### Code Splitting
+The app will open in your default web browser at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## How It Works
 
-### Analyzing the Bundle Size
+### Posenet Sleep Detection
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+EarlyGoose utilizes PoseNet, a machine learning model, to detect if you are sleeping or not. Simply place your device in a suitable position, and EarlyGoose will monitor your sleep patterns and provide feedback.
 
-### Making a Progressive Web App
+### Gamification
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We believe that making sleep fun is the key to better sleep habits. EarlyGoose offers a gamified experience where you can earn rewards, unlock skins, and achieve higher scores by maintaining a consistent and healthy sleep pattern. The more you sleep well, the more you progress in the game.
 
-### Advanced Configuration
+### Goal Setting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+EarlyGoose allows you to set personalized sleep goals. Whether you want to increase your sleep duration, improve sleep quality, or wake up at a specific time, our app helps you track and achieve your sleep goals. Stay motivated with EarlyGoose's goal tracking and notifications.
 
-### Deployment
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Open EarlyGoose in your web browser.
+2. Sign up or log in to your account.
+3. Place your device in a suitable position for sleep monitoring.
+4. EarlyGoose will start detecting your sleep pattern.
+5. Earn rewards, unlock skins, and reach your sleep goals.
+6. View your sleep progress and statistics on your dashboard.
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We welcome contributions from the community! Whether it's bug fixes, new features, or improvements to documentation, please feel free to fork this repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+---
+
+Thank you for choosing EarlyGoose to help you fix your sleep pattern and embark on a journey to better sleep. We're committed to your well-being, and we hope EarlyGoose brings you restful nights and joyful mornings. Sweet dreams!
