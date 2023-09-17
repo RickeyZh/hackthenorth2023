@@ -1,23 +1,36 @@
 {
   "files": {
-    "main.css": "/hackthenorth2023/static/css/main.bd8f7bc8.css",
-    "main.js": "/hackthenorth2023/static/js/main.688e74f2.js",
+    "main.css": "/hackthenorth2023/static/css/main.57cf4f29.css",
+    "main.js": "/hackthenorth2023/static/js/main.54387111.js",
     "static/js/787.ca294a0c.chunk.js": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js",
+    "static/media/Skin4.png": "/hackthenorth2023/static/media/Skin4.92574b4ab1abc6464189.png",
+    "static/media/duck1.png": "/hackthenorth2023/static/media/duck1.bdfb187cb93d9b4a007f.png",
+    "static/media/duck2.png": "/hackthenorth2023/static/media/duck2.fa98bd9789024ce9268d.png",
+    "static/media/penguin2.png": "/hackthenorth2023/static/media/penguin2.5a3c2550a682b73e6cf3.png",
+    "static/media/penguin1.png": "/hackthenorth2023/static/media/penguin1.c0048f92509b43b97743.png",
+    "static/media/duck4.png": "/hackthenorth2023/static/media/duck4.1da3a235c1bf1c8ee291.png",
+    "static/media/duck6.png": "/hackthenorth2023/static/media/duck6.ad49aa555af545242694.png",
+    "static/media/duck3.png": "/hackthenorth2023/static/media/duck3.a531ed06cba99e027fe4.png",
+    "static/media/duck5.png": "/hackthenorth2023/static/media/duck5.57c9a4911a3bf524028f.png",
+    "static/media/Skin3.png": "/hackthenorth2023/static/media/Skin3.3e7ec683996b669ca768.png",
     "static/media/Alata-Regular.ttf": "/hackthenorth2023/static/media/Alata-Regular.a90e0970a7aca7d36f95.ttf",
-    "static/media/Skin1.png": "/hackthenorth2023/static/media/Skin1.33037b146de872e909e5.png",
     "static/media/logo.svg": "/hackthenorth2023/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/Kawaii Bread.svg": "/hackthenorth2023/static/media/Kawaii Bread.9d6d44aa1f5ec618f0940e89a19dcbbf.svg",
     "static/media/h-1.svg": "/hackthenorth2023/static/media/h-1.e330528908d47566c008b3b998f2d0ca.svg",
+    "static/media/MomomiyaIchigo.webp": "/hackthenorth2023/static/media/MomomiyaIchigo.5cb9bd2377bc29a86ea4.webp",
+    "static/media/DuckysDream.webp": "/hackthenorth2023/static/media/DuckysDream.e62b72a303fce6a69ddc.webp",
+    "static/media/ToyMouse.webp": "/hackthenorth2023/static/media/ToyMouse.8350adc53370e3aa6c5d.webp",
     "static/media/Assignment.svg": "/hackthenorth2023/static/media/Assignment.f6709523887810c72c1cecec5fd8d258.svg",
     "static/media/Basket.svg": "/hackthenorth2023/static/media/Basket.882e6f09b84e9dae626d82c39071074f.svg",
+    "static/media/SayorisBreakfast.webp": "/hackthenorth2023/static/media/SayorisBreakfast.0977a6ce063cd2ae2085.webp",
     "index.html": "/hackthenorth2023/index.html",
     "static/media/Camera alt.svg": "/hackthenorth2023/static/media/Camera alt.f213aba8041a5042f848c9ddad328574.svg",
-    "main.bd8f7bc8.css.map": "/hackthenorth2023/static/css/main.bd8f7bc8.css.map",
-    "main.688e74f2.js.map": "/hackthenorth2023/static/js/main.688e74f2.js.map",
+    "main.57cf4f29.css.map": "/hackthenorth2023/static/css/main.57cf4f29.css.map",
+    "main.54387111.js.map": "/hackthenorth2023/static/js/main.54387111.js.map",
     "787.ca294a0c.chunk.js.map": "/hackthenorth2023/static/js/787.ca294a0c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd8f7bc8.css",
-    "static/js/main.688e74f2.js"
+    "static/css/main.57cf4f29.css",
+    "static/js/main.54387111.js"
   ]
 }
