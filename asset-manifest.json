@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bd8f7bc8.css",
-    "main.js": "/static/js/main.187d358c.js",
+    "main.js": "/static/js/main.04a276a9.js",
     "static/js/787.ca294a0c.chunk.js": "/static/js/787.ca294a0c.chunk.js",
     "static/media/Alata-Regular.ttf": "/static/media/Alata-Regular.a90e0970a7aca7d36f95.ttf",
     "static/media/Skin1.png": "/static/media/Skin1.33037b146de872e909e5.png",
@@ -13,11 +13,11 @@
     "static/media/Camera alt.svg": "/static/media/Camera alt.f213aba8041a5042f848c9ddad328574.svg",
     "index.html": "/index.html",
     "main.bd8f7bc8.css.map": "/static/css/main.bd8f7bc8.css.map",
-    "main.187d358c.js.map": "/static/js/main.187d358c.js.map",
+    "main.04a276a9.js.map": "/static/js/main.04a276a9.js.map",
     "787.ca294a0c.chunk.js.map": "/static/js/787.ca294a0c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd8f7bc8.css",
-    "static/js/main.187d358c.js"
+    "static/js/main.04a276a9.js"
   ]
 }
