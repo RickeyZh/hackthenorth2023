@@ -123,7 +123,7 @@ export default function Home() {
 
 
 
-            <div class="h-screen flex items-center justify-center mx-auto">
+            <div className="h-screen flex items-center justify-center mx-auto">
                 <img className="Bird absolute justify-center items-center h-[30vh] " src={TEST_CAT} alt="oks" />
                 <div className="Store top-[70%] items-center justify-center text-white text-6xl font-normal font-['Alata'] absolute text-center= bold">dont let yesterday take up too much of today!</div>
 
@@ -135,7 +135,7 @@ export default function Home() {
 
 
 
-            <div class="z-0 items.center">
+            <div className="z-0 items.center">
 
 
                 <div className="absolute w-[100%] h-[100%] top-[91%] left-[80%]">
