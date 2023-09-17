@@ -28,27 +28,19 @@ To run EarlyGoose, you'll need the following software installed on your machine:
 
 1. Clone this repository to your local machine:
 
-git clone https://github.com/yourusername/earlygoose.git
-
-Copy code
+git clone https://github.com/rickeyzh/hackthenorth2023.git
 
 2. Navigate to the project folder:
 
 cd earlygoose
 
-Copy code
-
 3. Install the project dependencies:
 
 npm install
 
-Copy code
-
 4. Start the EarlyGoose app:
 
 npm start
-
-Copy code
 
 The app will open in your default web browser at `http://localhost:3000`.
 
