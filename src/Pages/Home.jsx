@@ -7,13 +7,20 @@ import heart from "../Assets/h-1.svg";
 import font from "../Assets/Alata-Regular.ttf";
 import P5sketch from "../Components/Sketch";
 import { useState ,useEffect} from "react";
+import assignment from "../Assets/Assignment.svg";
 
+import logo from '../logo.svg';
+import '../App.css';
+import React from 'react';
+import QuoteGenerator from '../Components/QuoteGenerator';
 
 let score = 1090;
 // Give them messages that they aren't in frame/more than 1 person in frame
 // Can print the messages in
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isOpenS, setIsOpenS] = useState(false);
+
     const [backgroundColor, setBackgroundColor] = useState('#849ED1');
 
 
@@ -21,22 +28,9 @@ export default function Home() {
         setIsOpen(!isOpen);
     };
 
-
-    useEffect(() => {
-        const colorList = ['#849ED1', '#b58feb', '##eb8fb8', ,'#eb978f', '#ebaf8f', '#eb978f', '#eb8fb8', '#b58feb'];
-        let currentIndex = 0;
-       
-       
-        const interval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % colorList.length;
-        setBackgroundColor(colorList[currentIndex]);
-        }, 20000); // 20 seconds
-       
-       
-        return () => clearInterval(interval); // Cleanup on unmount
-        }, []);
-
-
+    const toDoPopup = () => {
+        setIsOpenS(!isOpenS);
+    };
 
 
         const [hoveredButton, setHoveredButton] = useState(null);
@@ -76,24 +70,73 @@ export default function Home() {
             </button>
           ));
 
+          const [mainQuoteIndex, setMainQuoteIndex] = useState(0);
+          const [shopQuoteIndex, setShopQuoteIndex] = useState(0);
+          const [showMainQuote, setShowMainQuote] = useState(true);
 
-   
+          const mainQuotes = [
+            "Don't let yesterday take up too much of today!",
+            "Reach your sleep goals!",
+            "Let's conquer the day!",
+            "I'm a dog hahahaha"
+            ];
+            
+            
+            const shopQuotes = ["pets!", "items!"];
+
+          useEffect(() => {
+            const colorList = [
+            "#849ED1",
+            "#b58feb",
+            "#eb8fb8",
+            "#eb978f",
+            "#ebaf8f",
+            "#eb978f",
+            "#eb8fb8",
+            "#b58feb",
+            ];
+            let currentIndex = 0;
+            
+            
+            const interval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % colorList.length;
+            setBackgroundColor(colorList[currentIndex]);
+            }, 20000); // 20 seconds
+            
+            
+            const mainQuoteInterval = setInterval(() => {
+            setShowMainQuote(true); // Display the main quote
+            setMainQuoteIndex((prevIndex) => (prevIndex + 1) % mainQuotes.length);
+            
+            
+            // Hide the main quote after 10 seconds
+            setTimeout(() => {
+            setShowMainQuote(false);
+            }, 10000);
+            }, 20000); // 30 seconds (to align with background color change)
+            
+            
+            return () => {
+            clearInterval(interval); // Cleanup on unmount
+            clearInterval(mainQuoteInterval); // Cleanup on unmount
+            };
+            }, []);
+            
+            
+
     return(
         <div>
             <P5sketch></P5sketch>
+
             <div className="Desktop2 flex w-[100%] h-[100%] absolute bg-slate-400 overflow-hidden " style={{backgroundColor,transition: 'background-color 2s ease'}}>
 
 
             <button onClick={menuPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[2%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
                 <div className="Rectangle1 w-[100%] h-[100%] absolute bg-white rounded-3xl border border-white" />
                 <img className="asdd w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={basket} />  
-
-
-               
             </button> {
                 isOpen && (
                     <div className="help items-center inline-flex bg-white z-10 ">
-
 
                         <div className="Rectangle1 w-[60vw] h-[60vh] top-[20%] left-[19%] bg-white rounded-[16px] absolute flex items-center justify-center mx-auto" >
                             <div className="Store top-[2%] items-center justify-center text-slate-400 text-6xl font-normal font-['Alata'] absolute text-center= bold">BREADSHOP</div>
@@ -120,14 +163,16 @@ export default function Home() {
 
 
 
-
+            <button onClick={toDoPopup} className="absolute w-[6%] h-[12%] left-[92%] top-[16%] transparent hover:transparent text-gray-800 font-bold rounded inline-flex items-center">
+                <img className="assignment w-[7vw] h-[8vh] left-0 top-[15%] absolute" src={assignment} />  
+            </button> 
 
 
             <div class="h-screen flex items-center justify-center mx-auto">
                 <img className="Bird absolute justify-center items-center h-[30vh] " src={TEST_CAT} alt="oks" />
-                <div className="Store top-[70%] items-center justify-center text-white text-6xl font-normal font-['Alata'] absolute text-center= bold">dont let yesterday take up too much of today!</div>
-
-
+                <div className="Store top-[70%] items-center justify-center text-white text-6xl font-normal font-['Alata'] absolute text-center bold">
+                {mainQuotes[mainQuoteIndex]}
+                </div>                
             </div>
 
 

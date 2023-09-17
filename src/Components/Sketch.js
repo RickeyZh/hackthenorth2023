@@ -81,7 +81,7 @@ function P5sketch(){
             //console.log(yDif);
 
 
-            if(yDif>xDif+50){ // probably standing
+            if(yDif>xDif+110){ // probably standing
                 if(sleepPrev==0){
                     prevStateTime %= 100;
                     prevStateTime++;
